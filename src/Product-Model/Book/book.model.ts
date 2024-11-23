@@ -34,11 +34,16 @@ const bookSchema = new Schema<TBook>({
     quantity: {
         type: Number,
         required: [true, "Please provide your Book quantity"],
+        min: 0
     },
     inStock: {
-       type: Boolean, default: true
+        type: Boolean, default: true
+    },
+},
+    {
+        timestamps: true,
     }
-})
+)
 
 
 const Book = model<TBook>("Book", bookSchema)

@@ -11,7 +11,6 @@ async function server() {
     } catch (error) {
         console.log(error)
     }
-    console.log(config.database_url)
 }
 
 server()

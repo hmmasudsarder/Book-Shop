@@ -16,7 +16,7 @@ const getSingleBook = async (id: string) => {
     return result
 }
 
-const updateBook = async (id: string, data: TBook) => {
+const updateBook = async (id: string, data: Partial<TBook>) => {
     const result = await Book.findByIdAndUpdate(id, data, { new: true })
     return result
 }
