@@ -38,7 +38,7 @@ const getAllBook = async (req: Request, res: Response) => {
 
 const getSingleBook = async (req: Request, res: Response) => {
     try {
-        const id = req.params.id;
+        const id = req.params.productId;
         const result = await bookService.getSingleBook(id);
         res.json({
             message: "Book retrieved successfully",
@@ -55,7 +55,7 @@ const getSingleBook = async (req: Request, res: Response) => {
 }
 const updateBook = async (req: Request, res: Response) => {
     try {
-        const id = req.params.id;
+        const id = req.params.productId;
         const body = req.body;
         const result = await bookService.updateBook(id, body);
         res.json({
@@ -73,7 +73,7 @@ const updateBook = async (req: Request, res: Response) => {
 }
 const deleteBook = async (req: Request, res: Response) => {
     try {
-        const id = req.params.id;
+        const id = req.params.productId;
         await bookService.deleteBook(id);
         res.json({
             message: "Book deleted successfully",

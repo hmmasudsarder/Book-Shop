@@ -46,5 +46,5 @@ const bookSchema = new Schema<TBook>({
 )
 
 
-const Book = model<TBook>("Book", bookSchema)
+const Book = model<TBook>("books", bookSchema)
 export default Book

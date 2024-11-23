@@ -3,10 +3,10 @@ import { bookController } from "./book.controller";
 
 const bookRouter = Router();
 
-bookRouter.post('/create-book', bookController.createBook);
-bookRouter.get('/getSingleBook/:id', bookController.getSingleBook);
-bookRouter.get('/getAllBooks', bookController.getAllBook);
-bookRouter.put('/:id', bookController.updateBook);
-bookRouter.delete('/:id', bookController.deleteBook);
+bookRouter.post('/', bookController.createBook);
+bookRouter.get('/:productId', bookController.getSingleBook);
+bookRouter.get('/', bookController.getAllBook);
+bookRouter.put('/:productId', bookController.updateBook);
+bookRouter.delete('/:productId', bookController.deleteBook);
 
 export default bookRouter
