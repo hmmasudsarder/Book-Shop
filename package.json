@@ -14,11 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.2",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/eslint__js": "^8.42.3",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
     "eslint": "^9.14.0",
     "globals": "^15.12.0",
