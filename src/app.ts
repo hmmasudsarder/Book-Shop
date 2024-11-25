@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json())
 
 app.use('/api/products', bookRouter)
-app.use('/api/orders', orderRouter)
+app.use('/api', orderRouter)
 
 app.get("/", (req: Request, res: Response) => {
     res.send("server is ongoing 🏃‍♂️‍➡️☄️")

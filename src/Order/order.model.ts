@@ -1,5 +1,3 @@
-// File: order.model.ts
-
 import { model, Schema } from "mongoose";
 import { TOrder } from "./order.interface";
 
@@ -15,17 +13,17 @@ const orderSchema = new Schema<TOrder>({
   },
   quantity: {
     type: Number,
-    required: [true, "Please provide the quantity"],
+    required: [true, "Please provide the quantity Number"],
     min: [0, "Quantity must be greater than or equal to 0"],
   },
   totalPrice: {
     type: Number,
-    required: [true, "Please calculate the total price"],
+    required: [true, "Please provide the Number for total price"],
     validate: {
       validator: function(v: number) {
-        return v >= 0;
+        return v >= 1;
       },
-      message: "Total price must be greater than or equal to 0"
+      message: "Total price must be greater than or equal to 1"
     }
   },
 }, {

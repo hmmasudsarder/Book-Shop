@@ -3,7 +3,8 @@ import { orderController } from "./order.controller";
 
 const orderRouter = Router();
 
-orderRouter.post('/', orderController.createOrder);
+orderRouter.post('/orders', orderController.createOrder);
+orderRouter.get('/orders/revenue', orderController.getRevenue);
 
 
 export default orderRouter
