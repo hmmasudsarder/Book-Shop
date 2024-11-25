@@ -76,14 +76,7 @@ The Book Shop API is deployed and live on Vercel, making it accessible for testi
 **Base URL:**  
 🌍 [https://book-shops-lilac.vercel.app/](https://book-shops-lilac.vercel.app/)
 
-#### 🔎 Live API Endpoints
 
-**Health Check**
-
-**Example Request:**
-
-```bash
-curl https://bike-store-api-assingment02.vercel.app/
 ```
 
 Response:
