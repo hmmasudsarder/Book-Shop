@@ -1,6 +1,6 @@
-#  Book Store API - Assignment 2
+# 📚 Book Store API - Assignment 2
 
-This project is a RESTful API built with **Express** and **TypeScript** to manage a bike store. It uses **MongoDB** with Mongoose for data storage and retrieval.
+This project is a RESTful API built with **Express** and **TypeScript** to manage a book store. It uses **MongoDB** with Mongoose for data storage and retrieval.
 
 ---
 
@@ -8,15 +8,15 @@ This project is a RESTful API built with **Express** and **TypeScript** to manag
 
 ### CRUD Operations for Bikes:
 
-- ➕ **Create new bikes**
-- 📋 **Get a list of all bikes**
-- 🔍 **Get a specific bike by ID**
-- ✏️ **Update an existing bike**
-- ❌ **Delete a bike**
+- ➕ **Create new book**
+- 📋 **Get a list of all books**
+- 🔍 **Get a specific book by ID**
+- ✏️ **Update an existing book**
+- ❌ **Delete a book**
 
 ### Order Management:
 
-- 🛒 **Place orders for bikes**
+- 🛒 **Place orders for book**
 - 📦 **Inventory Management**  
   Updates quantity and stock status
 - 🚨 **Handles insufficient stock scenarios**
@@ -32,13 +32,13 @@ This project requires **Node.js** and **npm** to be installed on your system.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/asadsuzan/bike-store-api.git
+   git clone https://github.com/hmmasudsarder/Book-Shop.git
    ```
 
-2. Navigate to the project directory:
+2. Navigate to the project directory:becareful
 
    ```bash
-   cd bike-store-api-assignment-2
+   cd Book-shop
    ```
 
 3. Install dependencies:
@@ -67,11 +67,11 @@ npm run dev
 This will start the server on port 5000 by default.
 
 Check the server status at:
-http://localhost:5000/health
+http://localhost:5000
 
 ### 🌐 Deployment
 
-The Bike Store API is deployed and live on Vercel, making it accessible for testing and integration.
+The Book Shop API is deployed and live on Vercel, making it accessible for testing and integration.
 
 **Base URL:**  
 🌍 [https://bike-store-api-assingment02.vercel.app](https://bike-store-api-assingment02.vercel.app)
@@ -80,21 +80,17 @@ The Bike Store API is deployed and live on Vercel, making it accessible for test
 
 **Health Check**
 
-- **Endpoint:** `/health`
-- **Method:** `GET`
-
 **Example Request:**
 
 ```bash
-curl https://bike-store-api-assingment02.vercel.app/health
+curl https://bike-store-api-assingment02.vercel.app/
 ```
 
 Response:
 
 ```javascript
 {
-    "message": "Server is up and running!",
-    "success": true
+    Server is Running 5000 🏃‍♂️‍➡️
 }
 ```
 
@@ -104,9 +100,9 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ---
 
-## 🚴 Inventory
+## 📘 Inventory
 
-### ➕ Create a Bike
+### ➕ Create a Book
 
 - **Endpoint**: `/api/products`
 - **Method**: `POST`
@@ -115,12 +111,12 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ```json
 {
-  "name": "Xtreme Mountain Bike",
-  "brand": "Giant",
-  "price": 1200,
-  "category": "Mountain",
-  "description": "A high-performance bike built for tough terrains.",
-  "quantity": 50,
+  "title": "The of Alchemist",
+  "author": "Paulo Coelho dab",
+  "price": 20,
+  "category": "Fiction",
+  "description": "A novel about a young shepherd's journey to realize his personal legend.",
+  "quantity": 100,
   "inStock": true
 }
 ```
@@ -129,21 +125,25 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ```json
 {
-  "message": "Bike created successfully",
+  "message": "Book created successfully",
   "success": true,
   "data": {
-    "name": "Xtreme Mountain Bike",
-    "brand": "Giant",
-    "price": 1200,
-    "category": "Mountain",
-    "description": "A high-performance bike built for tough terrains.",
-    "quantity": 50,
-    "inStock": true
+    "title": "The of Alchemist",
+    "author": "Paulo Coelho dab",
+    "price": 20,
+    "category": "Fiction",
+    "description": "A novel about a young shepherd's journey to realize his personal legend.",
+    "quantity": 100,
+    "inStock": true,
+    "_id": "67445a95d02f249a9922acfe",
+    "createdAt": "2024-11-25T11:08:05.302Z",
+    "updatedAt": "2024-11-25T11:08:05.302Z",
+    "__v": 0
   }
 }
 ```
 
-### 📋 Get All Bikes
+### 📋 Get All Books
 
 - **Endpoint:** `/api/products`
 - **Method:** `GET`
@@ -152,58 +152,79 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ```json
 {
-  "message": "Bikes retrieved successfully",
+  "message": "Books retrieved successfully",
   "success": true,
   "data": [
     {
-      "name": "Xtreme Mountain Bike",
-      "brand": "Giant",
-      "price": 1200,
-      "category": "Mountain",
-      "description": "A high-performance bike built for tough terrains.",
-      "quantity": 50,
-      "inStock": true
+      "_id": "67422e893ed594603c881d12",
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "price": 15.99,
+      "category": "Fiction",
+      "description": "A novel about a young shepherd's journey to realize his personal legend.",
+      "quantity": 120,
+      "inStock": true,
+      "createdAt": "2024-11-23T19:35:37.383Z",
+      "updatedAt": "2024-11-23T19:35:37.383Z",
+      "__v": 0
+    },
+    {
+      "_id": "67436cdf9c03792246084324",
+      "title": "The of Alchemist",
+      "author": "Paulo Coelho dab",
+      "price": 15,
+      "category": "Fiction",
+      "description": "A novel about a young shepherd's journey to realize his personal legend.",
+      "quantity": 116,
+      "inStock": true,
+      "createdAt": "2024-11-24T18:13:51.812Z",
+      "updatedAt": "2024-11-24T18:15:40.206Z",
+      "__v": 0
     }
   ]
 }
 ```
 
-### 🔍 Get a Specific Bike
+### 🔍 Get a Specific Book
 
 - **Endpoint:** `/api/products/:productId`
 - **Method:** `GET`
-- **Path Param:** productId (string) - ID of the bike
+- **Path Param:** productId (string) - ID of the Book
 
 **Response:**
 
 ```json
 {
-  "message": "Bike retrieved successfully",
+  "message": "Book retrieved successfully",
   "success": true,
-  "data": {
-    "name": "Xtreme Mountain Bike",
-    "brand": "Giant",
-    "price": 1200,
-    "category": "Mountain",
-    "description": "A high-performance bike built for tough terrains.",
-    "quantity": 50,
-    "inStock": true
+  "result": {
+    "_id": "67436cdf9c03792246084324",
+    "title": "The of Alchemist",
+    "author": "Paulo Coelho dab",
+    "price": 15,
+    "category": "Fiction",
+    "description": "A novel about a young shepherd's journey to realize his personal legend.",
+    "quantity": 116,
+    "inStock": true,
+    "createdAt": "2024-11-24T18:13:51.812Z",
+    "updatedAt": "2024-11-24T18:15:40.206Z",
+    "__v": 0
   }
 }
 ```
 
-### ✏️ Update a Bike
+### ✏️ Update a Book
 
 - **Endpoint:** `/api/products/:productId`
 - **Method:** `PUT`
-- **Path Param:** productId (string) - ID of the bike
+- **Path Param:** productId (string) - ID of the Book
 
 **Request Body:**
 
 ```json
 {
-  "name": "Performance Road Bike",
-  "brand": "Cervelo"
+  "price": 15,
+  "quantity": 25
 }
 ```
 
@@ -211,36 +232,43 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ```json
 {
-  "message": "Bike updated successfully",
-  "success": true,
-  "data": {
-    "name": "Performance Road Bike",
-    "brand": "Cervelo",
-    "price": 1500,
-    "category": "Road",
-    "description": "Built for speed on paved roads."
+  "message": "Book updated successfully",
+  "status": true,
+  "result": {
+    "_id": "67436cdf9c03792246084324",
+    "title": "The of Alchemist",
+    "author": "Paulo Coelho dab",
+    "price": 15, // Price updated
+    "category": "Fiction",
+    "description": "A novel about a young shepherd's journey to realize his personal legend.",
+    "quantity": 25, // Quantity updated
+    "inStock": true,
+    "createdAt": "2024-11-24T18:13:51.812Z",
+    "updatedAt": "2024-11-25T12:57:21.509Z",
+    "__v": 0
   }
 }
 ```
 
-### ❌ Delete a Bike
+### ❌ Delete a Book
 
 - **Endpoint:** `/api/products/:productId`
 - **Method:** `DELETE`
-- **Path Param:** productId (string) - ID of the bike
+- **Path Param:** productId (string) - ID of the Book
 
 **Response:**
 
 ```json
 {
-  "message": "Bike deleted successfully",
-  "success": true
+  "message": "Book deleted successfully",
+  "status": true,
+  "data": {}
 }
 ```
 
 ## 🛒 Orders
 
-### ➕ Place an Order
+### ➕ Create an Order
 
 - **Endpoint**: `/api/orders`
 - **Method**: `POST`
@@ -249,10 +277,10 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 
 ```json
 {
-  "email": "customer@example.com",
-  "product": "674346a891ea4f89e9cf5230",
+  "email": "customerdsfr1@example12.com",
+  "product": "67445a95d02f249a9922acfe",
   "quantity": 2,
-  "totalPrice": 5000
+  "totalPrice": 40
 }
 ```
 
@@ -261,12 +289,16 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 ```json
 {
   "message": "Order created successfully",
-  "success": true,
+  "status": true,
   "data": {
-    "email": "customer@example.com",
-    "product": "674346a891ea4f89e9cf5230",
+    "email": "customerdsfr1@example12.com",
+    "product": "67445a95d02f249a9922acfe",
     "quantity": 2,
-    "totalPrice": 5000
+    "totalPrice": 40,
+    "_id": "6744758bcd3e634341453a66",
+    "createdAt": "2024-11-25T13:03:07.247Z",
+    "updatedAt": "2024-11-25T13:03:07.247Z",
+    "__v": 0
   }
 }
 ```
@@ -288,10 +320,10 @@ The API uses standard HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) for CRUD ope
 }
 ```
 
-⚠️ Error Handling
+Error Handling
 The API uses standard HTTP status codes to indicate success or failure. In case of errors, the response includes an error message and details about the issue.
 
-🛠️ Development
+🧑‍💻 Development
 
 - Fork the repository and clone it locally.
 - Follow the steps under Getting Started.
